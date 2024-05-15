@@ -11,6 +11,7 @@ import FileInput from "./FileInput";
 import Textarea from "./Textarea";
 import Form from "./Form";
 import Input from "./Input";
+import FormRow from "./FormRow";
 
 export {
   AppLayout,
@@ -26,4 +27,5 @@ export {
   FileInput,
   Textarea,
   Input,
+  FormRow,
 };
