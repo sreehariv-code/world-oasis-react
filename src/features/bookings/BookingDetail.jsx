@@ -13,6 +13,7 @@ import {
   Button,
   ButtonGroup,
 } from "../../ui";
+import { useNavigate } from "react-router-dom";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -22,6 +23,8 @@ const HeadingGroup = styled.div`
 
 function BookingDetail() {
   const { booking, error, isLoading } = useBooking();
+
+  const navigate = useNavigate();
 
   const moveBack = useMoveBack();
 
@@ -51,6 +54,11 @@ function BookingDetail() {
         <Button variation="secondary" onClick={moveBack}>
           Back
         </Button>
+        {status === "unconfirmed" && (
+          <Button onClick={() => navigate(`/checkin/${bookingId}`)}>
+            Check In
+          </Button>
+        )}
       </ButtonGroup>
     </>
   );

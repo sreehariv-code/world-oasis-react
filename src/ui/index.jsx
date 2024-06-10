@@ -24,6 +24,7 @@ import Pagination from "./Pagination";
 import Tag from "./Tag";
 import ButtonText from "./ButtonText";
 import ButtonGroup from "./ButtonGroup";
+import Checkbox from "./Checkbox";
 
 export {
   AppLayout,
@@ -52,4 +53,5 @@ export {
   Tag,
   ButtonText,
   ButtonGroup,
+  Checkbox,
 };
