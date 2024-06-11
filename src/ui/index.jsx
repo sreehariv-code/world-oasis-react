@@ -25,6 +25,7 @@ import Tag from "./Tag";
 import ButtonText from "./ButtonText";
 import ButtonGroup from "./ButtonGroup";
 import Checkbox from "./Checkbox";
+import FormRowVertical from "./FormRowVertical";
 
 export {
   AppLayout,
@@ -54,4 +55,5 @@ export {
   ButtonText,
   ButtonGroup,
   Checkbox,
+  FormRowVertical,
 };
