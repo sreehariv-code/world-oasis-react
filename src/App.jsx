@@ -19,7 +19,7 @@ import {
   Users,
 } from "./pages";
 
-import { AppLayout } from "./ui";
+import { AppLayout, ProtectedRoute } from "./ui";
 import GlobalStyles from "./styles/GlobalStyles";
 import { Toaster } from "react-hot-toast";
 
@@ -45,7 +45,13 @@ function App() {
       <GlobalStyles />
       <Router>
         <Routes>
-          <Route element={<AppLayout />}>
+          <Route
+            element={
+              <ProtectedRoute>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="bookings" element={<Bookings />} />

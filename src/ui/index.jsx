@@ -26,8 +26,11 @@ import ButtonText from "./ButtonText";
 import ButtonGroup from "./ButtonGroup";
 import Checkbox from "./Checkbox";
 import FormRowVertical from "./FormRowVertical";
+import SpinnerMini from "./SpinnerMini";
+import ProtectedRoute from "./ProtectedRoute";
 
 export {
+  ProtectedRoute,
   AppLayout,
   Logo,
   Header,
@@ -56,4 +59,5 @@ export {
   ButtonGroup,
   Checkbox,
   FormRowVertical,
+  SpinnerMini,
 };
