@@ -1,3 +1,4 @@
+import UpdatePasswordForm from "../features/authentication/UpdatePasswordForm";
 import UpdateUserDataForm from "../features/authentication/UpdateUserDataForm";
 import { Heading, Row } from "../ui";
 
@@ -13,7 +14,7 @@ function Account() {
 
       <Row>
         <Heading as="h3">Update password</Heading>
-        <p>Update user password form</p>
+        <UpdatePasswordForm />
       </Row>
     </>
   );
