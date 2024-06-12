@@ -28,8 +28,12 @@ import Checkbox from "./Checkbox";
 import FormRowVertical from "./FormRowVertical";
 import SpinnerMini from "./SpinnerMini";
 import ProtectedRoute from "./ProtectedRoute";
+import ButtonIcon from "./ButtonIcon";
+import HeaderMenu from "./HeaderMenu";
 
 export {
+  HeaderMenu,
+  ButtonIcon,
   ProtectedRoute,
   AppLayout,
   Logo,

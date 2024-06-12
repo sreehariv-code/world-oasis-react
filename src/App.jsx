@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import {
+  Account,
   Booking,
   Bookings,
   Cabins,
@@ -60,6 +61,8 @@ function App() {
 
             <Route path="cabins" element={<Cabins />} />
             <Route path="users" element={<Users />} />
+            <Route path="account" element={<Account />} />
+
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="login" element={<Login />} />
