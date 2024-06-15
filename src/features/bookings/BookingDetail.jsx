@@ -14,6 +14,7 @@ import {
   ButtonGroup,
   Modal,
   ConfirmDelete,
+  Empty,
 } from "../../ui";
 import { useNavigate } from "react-router-dom";
 import { HiArrowUpOnSquare } from "react-icons/hi2";
@@ -37,6 +38,8 @@ function BookingDetail() {
   const moveBack = useMoveBack();
 
   if (isLoading) return <Spinner />;
+
+  if (!booking) return <Empty resourceName="booking" />;
 
   const { status, id: bookingId } = booking;
 

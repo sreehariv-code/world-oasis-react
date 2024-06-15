@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Button, Form, FormRowVertical, Input, SpinnerMini } from "../../ui";
-import { login } from "../../services/apiAuth";
+
 import { useLogin } from "./useLogin";
 
 function LoginForm() {
