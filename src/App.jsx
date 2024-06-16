@@ -14,6 +14,7 @@ import {
   Cabins,
   Checkin,
   Dashboard,
+  Guests,
   Login,
   PageNotFound,
   Settings,
@@ -64,6 +65,7 @@ function App() {
               <Route path="cabins" element={<Cabins />} />
               <Route path="users" element={<Users />} />
               <Route path="account" element={<Account />} />
+              <Route path="guests" element={<Guests />} />
 
               <Route path="settings" element={<Settings />} />
             </Route>

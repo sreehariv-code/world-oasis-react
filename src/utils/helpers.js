@@ -28,3 +28,21 @@ export const formatCurrency = (value) =>
   new Intl.NumberFormat("en", { style: "currency", currency: "USD" }).format(
     value
   );
+
+export async function listCountries() {
+  try {
+    const res = await fetch("https://flagcdn.com/en/codes.json");
+    const data = await res.json(); // Parse the response as JSON
+
+    // Transform the data into an array of objects suitable for react-select
+    const formattedData = Object.entries(data).map(([code, name]) => ({
+      label: name,
+      value: code,
+      flag: `https://flagcdn.com/h20/${code}.png`, // URL to the flag image
+    }));
+
+    return formattedData;
+  } catch (error) {
+    throw new Error("Can't fetch flag data");
+  }
+}

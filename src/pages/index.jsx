@@ -8,7 +8,7 @@ import Settings from "./Settings";
 import Users from "./Users";
 import Booking from "./Booking";
 import Checkin from "./Checkin";
-
+import Guests from "./Guests";
 export {
   Account,
   Bookings,
@@ -20,4 +20,5 @@ export {
   Settings,
   Booking,
   Checkin,
+  Guests,
 };
