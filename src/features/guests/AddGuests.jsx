@@ -12,10 +12,7 @@ function AddGuests() {
         </ButtonIcon>
       </Modal.Open>
       <Modal.Window name="add-user">
-        <>
-          <Heading as="h2">Add Booking</Heading>
-          <AddGuestForm />
-        </>
+        <AddGuestForm />
       </Modal.Window>
     </Modal>
   );

@@ -1,12 +1,11 @@
-import { Empty, Spinner, Table } from "../../ui";
+import { Empty, Spinner, Table, Pagination } from "../../ui";
 import GuestRow from "./GuestRow";
 import { useGuests } from "./useGuests";
 
 export default function GuestTable() {
-  const { guests, isLoading, error } = useGuests();
+  const { guests, isLoading, count } = useGuests();
 
   if (isLoading) return <Spinner />;
-
   if (!guests.length) return <Empty resourceName="guests" />;
 
   return (
@@ -22,6 +21,9 @@ export default function GuestTable() {
         data={guests}
         render={(guest) => <GuestRow key={guest.id} guest={guest} />}
       />
+      <Table.Footer>
+        <Pagination count={count} />
+      </Table.Footer>
     </Table>
   );
 }

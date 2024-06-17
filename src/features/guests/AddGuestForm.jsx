@@ -5,12 +5,13 @@ import styled from "styled-components";
 import { listCountries } from "../../utils/helpers";
 import { useEffect, useState } from "react";
 import { useDarkMode } from "../../context/DarkModeContext";
+import { useCreateGuest } from "./useCreateGuest";
 
 const StyledLayout = styled.div`
   margin-top: 2rem;
 `;
 
-function AddGuestForm() {
+function AddGuestForm({ onCloseModal }) {
   const {
     control,
     handleSubmit,
@@ -24,6 +25,8 @@ function AddGuestForm() {
   const { isDarkMode } = useDarkMode();
 
   const [options, setOptions] = useState([]);
+
+  const { createGuest, isCreating } = useCreateGuest();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,16 +48,25 @@ function AddGuestForm() {
     setValue("countryFlag", flagUrl);
   };
 
+  function onSubmit(data) {
+    createGuest(data, {
+      onSuccess: () => {
+        reset();
+        onCloseModal?.();
+      },
+    });
+  }
+
   return (
     <StyledLayout>
       <Form
-        type="modal"
+        type={onCloseModal ? "modal" : "regular"}
         onSubmit={handleSubmit((data) => {
-          console.log(data);
+          onSubmit(data);
         })}
       >
         <FormRow label="National ID">
-          <Input {...register("nationalId")} />
+          <Input {...register("nationalID")} />
         </FormRow>
         <FormRow label="Guest Name">
           <Input {...register("fullName")} />
@@ -108,7 +120,11 @@ function AddGuestForm() {
         </FormRow>
 
         <FormRow>
-          <Button type="reset" variation="secondary">
+          <Button
+            type="reset"
+            variation="secondary"
+            onClick={() => onCloseModal?.()}
+          >
             Cancel
           </Button>
           <Button type="submit">Add</Button>

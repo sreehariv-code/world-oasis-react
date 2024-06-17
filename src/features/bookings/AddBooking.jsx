@@ -12,10 +12,7 @@ function AddBooking() {
         </ButtonIcon>
       </Modal.Open>
       <Modal.Window name="add-user">
-        <>
-          <Heading as="h2">Add Booking</Heading>
-          <BookingForm />
-        </>
+        <BookingForm />
       </Modal.Window>
     </Modal>
   );

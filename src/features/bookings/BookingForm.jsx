@@ -6,7 +6,7 @@ const StyledLayout = styled.div`
   margin-top: 2rem;
 `;
 
-function BookingForm() {
+function BookingForm({ onCloseModal }) {
   const { handleSubmit, register, formState } = useForm({});
   const { errors } = formState;
   return (
@@ -18,10 +18,10 @@ function BookingForm() {
         })}
       >
         <FormRow label="National ID">
-          <Input {...register("nationalId")} />
+          <Input {...register("fullName")} />
         </FormRow>
         <FormRow label="Guest Name">
-          <Input {...register("fullName")} />
+          <Input {...register("guestId")} />
         </FormRow>
         <FormRow label="Email">
           <Input type="email" {...register("email")} />
@@ -30,7 +30,11 @@ function BookingForm() {
           <Input {...register("nationality")} />
         </FormRow>
         <FormRow>
-          <Button type="reset" variation="secondary">
+          <Button
+            type="reset"
+            variation="secondary"
+            onClick={() => onCloseModal?.()}
+          >
             Cancel
           </Button>
           <Button type="submit">Add</Button>
